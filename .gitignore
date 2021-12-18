@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# credentials
+video-editor-bot-fa9707e9ad63.json
+.env
