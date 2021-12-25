@@ -1,11 +1,13 @@
 import ReactDOM from 'react-dom'
 import './index.css'
 import { App } from './App'
-import { StrictMode } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
-  <StrictMode>
+  <QueryClientProvider client={queryClient}>
     <App />
-  </StrictMode>,
+  </QueryClientProvider>,
   document.getElementById('root')
 )

@@ -1,22 +1,22 @@
-import { BOT_TOKEN } from '../init/env'
-import { useState } from 'react'
-import importedOrders from '../database/orders.json'
-// import importedOrders from '/home/romv2/projects_wsl/telegram/p2pVideoEditorBot/files/orders.json'
-// import { adapter } from '@grammyjs/storage-firestore'
-// import { Firestore } from '@google-cloud/firestore'
-
-if (BOT_TOKEN === undefined) {
-  throw new TypeError('BOT_TOKEN must be provided! BOT_TOKEN is undefined.')
-}
+import { v4 } from 'uuid'
+import { firestore } from '../database/firebase'
+import { useFirestoreQuery } from '@react-query-firebase/firestore'
+import { collection, query } from 'firebase/firestore'
+import { Key } from 'react'
 
 export const Orders = () => {
-  const [orders] = useState(importedOrders)
-  return (
+  const ref = query(collection(firestore, 'sessions'))
+  const firestoreQuery = useFirestoreQuery(['sessions'], ref)
+  const snapshot = firestoreQuery.data
+  return firestoreQuery.isLoading ? (
+    <>Loading...</>
+  ) : (
     <>
-      {/* {JSON.stringify(orders, null, 2)}, */}
-      {Object.entries(orders).map(user => (
-        <pre>{JSON.stringify(user, null, 2)}</pre>
-      ))}
+      {snapshot &&
+        snapshot.docs.map((docSnapshot: { data: () => any; id: Key | null | undefined }) => {
+          const data = docSnapshot.data()
+          return <pre key={v4()}>{JSON.stringify(data.orders, null, 2)}</pre>
+        })}
     </>
   )
 }
