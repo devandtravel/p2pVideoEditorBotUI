@@ -1,36 +1,28 @@
 {
   "name": "p2p-video-editor-bot-ui",
-  "version": "0.1.0",
+  "version": "5.0.0",
   "private": true,
   "dependencies": {
-    "@google-cloud/firestore": "^5.0.1",
-    "@grammyjs/files": "^1.0.2",
-    "@grammyjs/storage-firestore": "^1.0.2",
-    "@react-query-firebase/firestore": "^0.4.2",
-    "@types/node": "^17.0.4",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "firebase": "^9.6.1",
-    "grammy": "^1.5.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-query": "^3.34.6",
-    "react-scripts": "5.0.0",
-    "telegraf-middleware-console-time": "^2.1.0",
-    "typescript": "^4.5.4",
-    "uuid": "^8.3.2"
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "latest",
+    "@react-query-firebase/firestore": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "firebase": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-query": "latest",
+    "react-scripts": "latest",
+    "typescript": "latest",
+    "uuid": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -45,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "@grammyjs/types": "^2.4.5",
+    "@grammyjs/types": "latest",
     "@types/uuid": "^8.3.3"
   }
 }
