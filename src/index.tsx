@@ -1,17 +1,12 @@
 import ReactDOM from 'react-dom'
-import CssBaseline from '@mui/material/CssBaseline'
-import { ToggleColorMode } from './ToggleColorMode'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { StyledEngineProvider } from '@mui/material/styles'
+import { ThemedApp } from './ThemedApp'
 
 const queryClient = new QueryClient()
 
 ReactDOM.render(
-  <StyledEngineProvider injectFirst>
-    <QueryClientProvider client={queryClient}>
-      <CssBaseline />
-      <ToggleColorMode />
-    </QueryClientProvider>
-  </StyledEngineProvider>,
+  <QueryClientProvider client={queryClient}>
+    <ThemedApp />
+  </QueryClientProvider>,
   document.querySelector('#root')
 )
