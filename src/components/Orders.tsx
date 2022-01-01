@@ -25,8 +25,9 @@ export const Orders = () => {
             console.log('data:', data)
             const userId = docSnapshot.id as string
             console.log('userId:', userId)
-            const user = data && userId && data[userId].hasOwnProperty('user') && data[userId].user
-            const orders = userId && data[userId].orders && data[userId].orders
+            const user = data && userId && data[userId] && data[userId].hasOwnProperty('user') && data[userId].user
+            const orders =
+              data && userId && data[userId] && data[userId].hasOwnProperty('orders') && data[userId].orders
             return (
               <div key={v4()}>
                 {user && Object.keys(user).length !== 0 && (
